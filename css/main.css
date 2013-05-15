@@ -1,0 +1,17 @@
+#Stage {
+  margin: 20px auto;
+  border: 2px solid #aaaacc;
+}
+
+#scoreWrapper {
+  position: absolute;
+  left: 150px;
+}
+
+#scoreDisplay {
+  padding-left: 13px;
+}
+
+#bestScoreDisplay {
+  padding-left: 13px;
+}

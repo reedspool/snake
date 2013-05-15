@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <title>Just a snake...</title>
+  <!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="snake_edgePreload.js"></script>
+    <style>
+        .edgeLoad-EDGE-19599898 { visibility:hidden; }
+    </style>
+<!--Adobe Edge Runtime End-->
+
+  <!--User defined stuff-->
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/vendor/jquery.mobile-1.2.0.min.css">
+  <script>
+    AdobeEdge.bootstrapCallback(function (compId) {
+      yepnope({
+        nope:[
+          'user_js/constants.js',
+          'user_js/Grid.js',
+          'user_js/Doll.js',
+          'user_js/MovingDoll.js',
+          'user_js/AnimateMovingDoll.js',
+          'user_js/SnakeHead.js',
+          'user_js/SnakeTail.js',
+          'user_js/SnakeTailSegment.js',
+          'user_js/Snake.js',
+          'user_js/Apple.js',
+          'user_js/TimedGame.js',
+          'user_js/SnakeGame.js',
+          'user_js/jquery.snakeGame.js',
+          'user_js/SymbolFactoryFactory.js',
+          'vendor_js/jquery.mobile-1.2.0.min.js'
+        ],
+        complete: function () {$(document).snakeGame();}
+      });
+    });
+
+
+  </script>
+</head>
+<body style="margin:0;padding:0;">
+  <div data-role="page">
+    <div id="Stage" class="EDGE-19599898">
+    </div>
+    <div id='scoreWrapper'>
+      <span>Score:</span><span id="scoreDisplay">0</span><br>
+      <span>Best Score:</span><span id='bestScoreDisplay'>0</span>
+    </div>
+    <center>
+      <span> Hit an Arrow Key to begin!</span><br>
+      <span>(P) Pause</span><br />
+      <span>(N) New Game</span><br>
+      <span>(I)t's not finished yet!</span>
+    </center>
+  </div>
+</body>
+</html>
