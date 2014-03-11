@@ -133,14 +133,6 @@ var symbols = {
             ["style", "left", '-50px'],
             ["style", "top", '112.37px']
          ],
-         "${_SnakeLeftSegment}": [
-            ["style", "top", '50px'],
-            ["style", "left", '-50px']
-         ],
-         "${_SnakeStraightSegment}": [
-            ["style", "left", '-50px'],
-            ["style", "top", '22.64px']
-         ],
          "${_RectangleCopy3}": [
             ["style", "top", '200px'],
             ["style", "height", '200px'],
@@ -148,31 +140,39 @@ var symbols = {
             ["style", "left", '200px'],
             ["style", "width", '200px']
          ],
+         "${_SnakeStraightSegment}": [
+            ["style", "left", '-50px'],
+            ["style", "top", '22.64px']
+         ],
+         "${_SnakeLeftSegment}": [
+            ["style", "top", '50px'],
+            ["style", "left", '-50px']
+         ],
          "${_SnakeRightSegment}": [
             ["style", "left", '-50px'],
             ["style", "top", '80px']
          ],
          "${_RectangleCopy}": [
-            ["color", "background-color", 'rgba(231,139,139,0.00)'],
             ["style", "height", '200px'],
+            ["color", "background-color", 'rgba(231,139,139,0.00)'],
             ["style", "left", '200px'],
             ["style", "width", '200px']
          ],
          "${_RectangleCopy2}": [
-            ["color", "background-color", 'rgba(231,139,139,0.00)'],
             ["style", "height", '400px'],
+            ["color", "background-color", 'rgba(231,139,139,0.00)'],
             ["style", "left", '400px'],
             ["style", "width", '200px']
          ],
          "${_Stage}": [
-            ["color", "background-color", 'rgba(255,255,255,1)'],
-            ["style", "overflow", 'hidden'],
-            ["style", "height", '400px'],
-            ["style", "width", '600px']
+            ["color", "background-color", 'rgba(48,48,48,1.00)'],
+            ["style", "width", '588px'],
+            ["style", "height", '399px'],
+            ["style", "overflow", 'hidden']
          ],
          "${_Rectangle}": [
-            ["color", "background-color", 'rgba(171,111,111,0.00)'],
             ["style", "height", '400px'],
+            ["color", "background-color", 'rgba(171,111,111,0.00)'],
             ["style", "width", '200px']
          ],
          "${_SnakeHead}": [
@@ -208,10 +208,10 @@ var symbols = {
    content: {
    dom: [
    {
-      type: 'rect',
+      rect: ['0px','0px','20px','20px','auto','auto'],
       id: 'Rectangle',
       stroke: [0,'rgba(0,0,0,1)','none'],
-      rect: ['0px','0px','20px','20px','auto','auto'],
+      type: 'rect',
       fill: ['rgba(62,177,55,1.00)']
    }],
    symbolInstances: [
@@ -219,16 +219,16 @@ var symbols = {
    },
    states: {
       "Base State": {
-         "${symbolSelector}": [
-            ["style", "height", '100px'],
-            ["style", "width", '100px']
-         ],
          "${_Rectangle}": [
             ["style", "top", '0px'],
             ["style", "height", '20px'],
             ["color", "background-color", 'rgba(55,165,177,1.00)'],
             ["style", "left", '0px'],
             ["style", "width", '20px']
+         ],
+         "${symbolSelector}": [
+            ["style", "height", '100px'],
+            ["style", "width", '100px']
          ]
       }
    },
@@ -285,44 +285,26 @@ var symbols = {
    content: {
    dom: [
    {
-      rect: ['0px','0px','20px','20px','auto','auto'],
-      borderRadius: ['7px 7px','7px 7px','7px 7px','7px 7px'],
-      id: 'RoundRect',
-      stroke: [0,'rgb(0, 0, 0)','none'],
-      type: 'rect',
-      fill: ['rgba(110,182,122,1.00)']
-   },
-   {
-      rect: ['4px','0px','20px','31px','auto','auto'],
-      id: 'Text',
-      text: 'A',
-      font: ['Arial, Helvetica, sans-serif',18,'rgba(0,0,0,1)','normal','none',''],
-      type: 'text'
+      rect: ['-46px','-12px','89px','45px','auto','auto'],
+      id: 'itsASnake2',
+      transform: [{},['90deg']],
+      type: 'image',
+      fill: ['rgba(0,0,0,0)','snake_images/itsASnake.png','0px','0px']
    }],
    symbolInstances: [
    ]
    },
    states: {
       "Base State": {
-         "${_RoundRect}": [
-            ["color", "background-color", 'rgba(110,182,122,1.00)'],
-            ["style", "border-bottom-left-radius", [7,7], {valueTemplate:'@@0@@px @@1@@px'} ],
-            ["style", "border-bottom-right-radius", [7,7], {valueTemplate:'@@0@@px @@1@@px'} ],
-            ["style", "top", '0px'],
-            ["style", "border-top-right-radius", [7,7], {valueTemplate:'@@0@@px @@1@@px'} ],
-            ["style", "left", '0px'],
-            ["style", "border-top-left-radius", [7,7], {valueTemplate:'@@0@@px @@1@@px'} ]
-         ],
-         "${_Text}": [
-            ["style", "top", '0px'],
-            ["style", "height", '30.660430908203px'],
-            ["style", "font-size", '18px'],
-            ["style", "left", '4px'],
-            ["style", "width", '20px']
+         "${_itsASnake2}": [
+            ["style", "top", '21px'],
+            ["style", "left", '-23px'],
+            ["transform", "rotateZ", '90deg']
          ],
          "${symbolSelector}": [
-            ["style", "height", '20px'],
-            ["style", "width", '20px']
+            ["style", "height", '21px'],
+            ["style", "overflow", 'hidden'],
+            ["style", "width", '21px']
          ]
       }
    },
@@ -330,10 +312,15 @@ var symbols = {
       "Default Timeline": {
          fromState: "Base State",
          toState: "",
-         duration: 0,
+         duration: 2000,
          autoPlay: true,
          timeline: [
-         ]
+            { id: "eid84", tween: [ "transform", "${_itsASnake2}", "rotateZ", '90deg', { fromValue: '90deg'}], position: 0, duration: 0 },
+            { id: "eid81", tween: [ "transform", "${_itsASnake2}", "rotateZ", '180deg', { fromValue: '90deg'}], position: 1882, duration: 0 },
+            { id: "eid82", tween: [ "style", "${_itsASnake2}", "left", '-23px', { fromValue: '-23px'}], position: 0, duration: 0 },
+            { id: "eid80", tween: [ "style", "${_itsASnake2}", "left", '-1px', { fromValue: '-23px'}], position: 1882, duration: 0 },
+            { id: "eid83", tween: [ "style", "${_itsASnake2}", "top", '21px', { fromValue: '21px'}], position: 0, duration: 0 },
+            { id: "eid79", tween: [ "style", "${_itsASnake2}", "top", '-1px', { fromValue: '21px'}], position: 1882, duration: 0 }         ]
       }
    }
 },
@@ -377,48 +364,26 @@ var symbols = {
    content: {
    dom: [
    {
-      id: 'segment1',
+      rect: ['-45px','-2px','89px','45px','auto','auto'],
+      id: 'itsASnake4',
+      transform: [{},['270deg']],
       type: 'image',
-      rect: ['0px','0px','20px','20px','auto','auto'],
-      fill: ['rgba(0,0,0,0)','snake_images/segment1.png','0px','0px']
-   },
-   {
-      type: 'image',
-      display: 'none',
-      rect: ['0px','0px','20px','20px','auto','auto'],
-      id: 'segment2',
-      fill: ['rgba(0,0,0,0)','snake_images/segment2.png','0px','0px']
-   },
-   {
-      type: 'image',
-      display: 'none',
-      rect: ['0px','0px','20px','20px','auto','auto'],
-      id: 'segment3',
-      fill: ['rgba(0,0,0,0)','snake_images/segment3.png','0px','0px']
+      fill: ['rgba(0,0,0,0)','snake_images/itsASnake.png','0px','0px']
    }],
    symbolInstances: [
    ]
    },
    states: {
       "Base State": {
-         "${_segment1}": [
-            ["style", "top", '0px'],
-            ["style", "left", '0px'],
-            ["style", "display", 'block']
-         ],
-         "${_segment3}": [
-            ["style", "top", '0px'],
-            ["style", "left", '0px'],
-            ["style", "display", 'none']
-         ],
-         "${_segment2}": [
-            ["style", "top", '0px'],
-            ["style", "left", '0px'],
-            ["style", "display", 'none']
-         ],
          "${symbolSelector}": [
-            ["style", "height", '20px'],
-            ["style", "width", '20px']
+            ["style", "height", '21px'],
+            ["style", "overflow", 'hidden'],
+            ["style", "width", '21px']
+         ],
+         "${_itsASnake4}": [
+            ["style", "top", '-1px'],
+            ["style", "left", '-45px'],
+            ["transform", "rotateZ", '90deg']
          ]
       }
    },
@@ -426,15 +391,11 @@ var symbols = {
       "Default Timeline": {
          fromState: "Base State",
          toState: "",
-         duration: 304,
+         duration: 250,
          autoPlay: true,
          timeline: [
-            { id: "eid12", tween: [ "style", "${_segment3}", "display", 'none', { fromValue: 'none'}], position: 0, duration: 0 },
-            { id: "eid17", tween: [ "style", "${_segment3}", "display", 'block', { fromValue: 'none'}], position: 202, duration: 0 },
-            { id: "eid14", tween: [ "style", "${_segment1}", "display", 'none', { fromValue: 'block'}], position: 100, duration: 0 },
-            { id: "eid13", tween: [ "style", "${_segment2}", "display", 'none', { fromValue: 'none'}], position: 0, duration: 0 },
-            { id: "eid15", tween: [ "style", "${_segment2}", "display", 'block', { fromValue: 'none'}], position: 100, duration: 0 },
-            { id: "eid16", tween: [ "style", "${_segment2}", "display", 'none', { fromValue: 'block'}], position: 202, duration: 0 }         ]
+            { id: "eid77", tween: [ "style", "${_itsASnake4}", "top", '-1px', { fromValue: '-1px'}], position: 0, duration: 0 },
+            { id: "eid78", tween: [ "style", "${_itsASnake4}", "top", '-23px', { fromValue: '-1px'}], position: 131, duration: 0 }         ]
       }
    }
 },
@@ -449,48 +410,24 @@ var symbols = {
    content: {
    dom: [
    {
-      id: 'left_turn_1',
+      id: 'itsASnake5',
       type: 'image',
-      rect: ['0px','0px','20px','20px','auto','auto'],
-      fill: ['rgba(0,0,0,0)','snake_images/left_turn_1.png','0px','0px']
-   },
-   {
-      rect: ['0px','0px','20px','20px','auto','auto'],
-      id: 'left_turn_2',
-      type: 'image',
-      display: 'none',
-      fill: ['rgba(0,0,0,0)','snake_images/left_turn_2.png','0px','0px']
-   },
-   {
-      rect: ['0px','0px','20px','20px','auto','auto'],
-      id: 'left_turn_3',
-      type: 'image',
-      display: 'none',
-      fill: ['rgba(0,0,0,0)','snake_images/left_turn_3.png','0px','0px']
+      rect: ['-67px','-2px','89px','45px','auto','auto'],
+      fill: ['rgba(0,0,0,0)','snake_images/itsASnake.png','0px','0px']
    }],
    symbolInstances: [
    ]
    },
    states: {
       "Base State": {
-         "${_left_turn_2}": [
-            ["style", "top", '0px'],
-            ["style", "left", '0px'],
-            ["style", "display", 'none']
-         ],
-         "${_left_turn_3}": [
-            ["style", "top", '0px'],
-            ["style", "left", '0px'],
-            ["style", "display", 'none']
-         ],
-         "${_left_turn_1}": [
-            ["style", "top", '0px'],
-            ["style", "left", '0px'],
-            ["style", "display", 'block']
+         "${_itsASnake5}": [
+            ["style", "left", '-67px'],
+            ["style", "top", '-2px']
          ],
          "${symbolSelector}": [
-            ["style", "height", '20px'],
-            ["style", "width", '20px']
+            ["style", "height", '21px'],
+            ["style", "overflow", 'hidden'],
+            ["style", "width", '21px']
          ]
       }
    },
@@ -501,12 +438,7 @@ var symbols = {
          duration: 308,
          autoPlay: true,
          timeline: [
-            { id: "eid21", tween: [ "style", "${_left_turn_1}", "display", 'none', { fromValue: 'block'}], position: 121, duration: 0 },
-            { id: "eid19", tween: [ "style", "${_left_turn_2}", "display", 'none', { fromValue: 'none'}], position: 0, duration: 0 },
-            { id: "eid20", tween: [ "style", "${_left_turn_2}", "display", 'block', { fromValue: 'none'}], position: 121, duration: 0 },
-            { id: "eid22", tween: [ "style", "${_left_turn_2}", "display", 'none', { fromValue: 'block'}], position: 198, duration: 0 },
-            { id: "eid18", tween: [ "style", "${_left_turn_3}", "display", 'none', { fromValue: 'none'}], position: 0, duration: 0 },
-            { id: "eid23", tween: [ "style", "${_left_turn_3}", "display", 'block', { fromValue: 'none'}], position: 198, duration: 0 }         ]
+         ]
       }
    }
 },
@@ -521,48 +453,26 @@ var symbols = {
    content: {
    dom: [
    {
-      id: 'right_turn_1',
+      rect: ['-24px','20px','89px','45px','auto','auto'],
+      id: 'itsASnake6',
+      transform: [{},['270deg']],
       type: 'image',
-      rect: ['0px','0px','20px','20px','auto','auto'],
-      fill: ['rgba(0,0,0,0)','snake_images/right_turn_1.png','0px','0px']
-   },
-   {
-      rect: ['0px','0px','20px','20px','auto','auto'],
-      id: 'right_turn_2',
-      type: 'image',
-      display: 'none',
-      fill: ['rgba(0,0,0,0)','snake_images/right_turn_2.png','0px','0px']
-   },
-   {
-      rect: ['0px','0px','20px','20px','auto','auto'],
-      id: 'right_turn_3',
-      type: 'image',
-      display: 'none',
-      fill: ['rgba(0,0,0,0)','snake_images/right_turn_3.png','0px','0px']
+      fill: ['rgba(0,0,0,0)','snake_images/itsASnake.png','0px','0px']
    }],
    symbolInstances: [
    ]
    },
    states: {
       "Base State": {
-         "${_right_turn_1}": [
-            ["style", "top", '0px'],
-            ["style", "left", '0px'],
-            ["style", "display", 'block']
+         "${_itsASnake6}": [
+            ["style", "top", '20px'],
+            ["style", "left", '-24px'],
+            ["transform", "rotateZ", '270deg']
          ],
          "${symbolSelector}": [
-            ["style", "height", '20px'],
-            ["style", "width", '20px']
-         ],
-         "${_right_turn_3}": [
-            ["style", "top", '0px'],
-            ["style", "left", '0px'],
-            ["style", "display", 'none']
-         ],
-         "${_right_turn_2}": [
-            ["style", "top", '0px'],
-            ["style", "left", '0px'],
-            ["style", "display", 'none']
+            ["style", "height", '21px'],
+            ["style", "overflow", 'hidden'],
+            ["style", "width", '21px']
          ]
       }
    },
@@ -573,12 +483,7 @@ var symbols = {
          duration: 310,
          autoPlay: true,
          timeline: [
-            { id: "eid24", tween: [ "style", "${_right_turn_3}", "display", 'none', { fromValue: 'none'}], position: 0, duration: 0 },
-            { id: "eid29", tween: [ "style", "${_right_turn_3}", "display", 'block', { fromValue: 'none'}], position: 204, duration: 0 },
-            { id: "eid25", tween: [ "style", "${_right_turn_2}", "display", 'none', { fromValue: 'none'}], position: 0, duration: 0 },
-            { id: "eid26", tween: [ "style", "${_right_turn_2}", "display", 'block', { fromValue: 'none'}], position: 105, duration: 0 },
-            { id: "eid28", tween: [ "style", "${_right_turn_2}", "display", 'none', { fromValue: 'block'}], position: 204, duration: 0 },
-            { id: "eid27", tween: [ "style", "${_right_turn_1}", "display", 'none', { fromValue: 'block'}], position: 105, duration: 0 }         ]
+         ]
       }
    }
 },
@@ -593,42 +498,19 @@ var symbols = {
    content: {
    dom: [
    {
-      rect: ['-9px','-8px','37px','38px','auto','auto'],
-      borderRadius: ['50%','50%','50%','50%'],
-      opacity: 0.009765625,
-      id: 'Ellipse2',
-      stroke: [0,'rgb(0, 0, 0)','none'],
-      type: 'ellipse',
-      fill: ['rgba(240,27,27,1)']
-   },
-   {
-      rect: ['0px','0px','20px','20px','auto','auto'],
-      borderRadius: ['50%','50%','50%','50%'],
-      id: 'Ellipse',
-      stroke: [0,'rgba(0,0,0,1)','none'],
-      type: 'ellipse',
-      fill: ['rgba(240,27,27,1.00)']
+      id: 'apple4',
+      type: 'image',
+      rect: ['0px','0px','23px','23px','auto','auto'],
+      fill: ['rgba(0,0,0,0)','snake_images/apple.gif','0px','0px']
    }],
    symbolInstances: [
    ]
    },
    states: {
       "Base State": {
-         "${_Ellipse2}": [
-            ["style", "top", '-5px'],
-            ["style", "height", '30px'],
-            ["style", "opacity", '0.42889404296875'],
-            ["style", "left", '-5px'],
-            ["style", "width", '30px']
-         ],
-         "${_Ellipse}": [
-            ["color", "background-color", 'rgba(149,28,28,1.00)'],
-            ["style", "left", '-0.02px'],
-            ["style", "top", '0px']
-         ],
          "${symbolSelector}": [
-            ["style", "height", '20px'],
-            ["style", "width", '20px']
+            ["style", "height", '23px'],
+            ["style", "width", '23px']
          ]
       }
    },
@@ -636,13 +518,10 @@ var symbols = {
       "Default Timeline": {
          fromState: "Base State",
          toState: "",
-         duration: 1164.765625,
+         duration: 1164,
          autoPlay: true,
          timeline: [
-            { id: "eid41", tween: [ "style", "${_Ellipse2}", "opacity", '0', { fromValue: '0.42889404296875'}], position: 0, duration: 582 },
-            { id: "eid49", tween: [ "style", "${_Ellipse2}", "opacity", '0.42889404296875', { fromValue: '0'}], position: 582, duration: 582 },
-            { id: "eid31", tween: [ "color", "${_Ellipse}", "background-color", 'rgba(240,27,27,1)', { animationColorSpace: 'RGB', valueTemplate: undefined, fromValue: 'rgba(149,28,28,1.00)'}], position: 0, duration: 582 },
-            { id: "eid45", tween: [ "color", "${_Ellipse}", "background-color", 'rgba(149,28,28,1.00)', { animationColorSpace: 'RGB', valueTemplate: undefined, fromValue: 'rgba(240,27,27,1)'}], position: 582, duration: 582 }         ]
+         ]
       }
    }
 }

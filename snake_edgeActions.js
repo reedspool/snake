@@ -64,6 +64,12 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
    //Edge symbol: 'SnakeHead'
    (function(symbolName) {   
    
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 2000, function(sym, e) {
+         sym.play();
+
+      });
+      //Edge binding end
+
    })("SnakeHead");
    //Edge symbol end:'SnakeHead'
 
@@ -80,7 +86,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
    //Edge symbol: 'SnakeStraightSegment'
    (function(symbolName) {   
    
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 304, function(sym, e) {
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 250, function(sym, e) {
          sym.play();
 
       });

@@ -1,12 +1,12 @@
 GAME = {
   field : {
     rows : 20,
-    cols : 30,
-    width : 600,
-    height: 400
+    cols : 28,
+    width : 588,
+    height: 399
   },
   snake : {
-    timeStepInterval : 75,
+    timeStepInterval : 100,
     playerBegin : {
       x : 10,
       y : 10,
